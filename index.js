@@ -27,4 +27,4 @@ app.use('/api', dietsRoutes.routes);
 app.use('/api', recipesRoutes.routes);
 app.use('/api', imagesRoutes.routes);
 
-app.listen(config.port, () => console.log('Server is listening on http://localhost:' + config.port));
+app.listen(process.env.PORT || config.port, () => console.log('Server is listening on http://localhost:' + config.port + ' or on port in heroku: ' + process.env.PORT));
