@@ -1,0 +1,45 @@
+UPDATE [nutripal].[dbo].[namirnice]
+   SET [Naziv] = @Naziv
+      ,[kcal] = @kcal
+      ,[UH] = @UH
+      ,[Proteini] = @Proteini
+      ,[Masti] = @Masti
+      ,[Kategorija] = @Kategorija
+      ,[Slika] = @Slika
+      ,[Energetska_vrednost] = @Energetska_vrednost
+      ,[Ukupno_proteina] = @Ukupno_proteina
+      ,[Ukupno_ugljenih_hidrata] = @Ukupno_ugljenih_hidrata
+      ,[Ukupno_masti] = @Ukupno_masti
+      ,[od_toga_zasicene_masne_kiseline] = @od_toga_zasicene_masne_kiseline
+      ,[Dijetalna_vlakna] = @Dijetalna_vlakna
+      ,[Ukupno_secera] = @Ukupno_secera
+      ,[Holesterol] = @Holesterol
+      ,[Voda] = @Voda
+      ,[Mononezasicene_masne_kiseline] = @Mononezasicene_masne_kiseline
+      ,[Polinezasicene_masne_kiseline] = @Polinezasicene_masne_kiseline
+      ,[VitaminC] = @VitaminC
+      ,[VitaminB1_Tiamin] = @VitaminB1_Tiamin
+      ,[VitaminB2_Riboflavin] = @VitaminB2_Riboflavin
+      ,[VitaminB3_Niacin] = @VitaminB3_Niacin
+      ,[VitaminB5_Pantotenska_kiselina] = @VitaminB5_Pantotenska_kiselina
+      ,[VitaminB6_Piridoksin] = @VitaminB6_Piridoksin
+      ,[VitaminB9_Folati] = @VitaminB9_Folati
+      ,[VitaminB12_Kobalamin] = @VitaminB12_Kobalamin
+      ,[VitaminA] = @VitaminA
+      ,[VitaminD] = @VitaminD
+      ,[VitaminE] = @VitaminE
+      ,[VitaminK] = @VitaminK
+      ,[Kalcijum_Ca] = @Kalcijum_Ca
+      ,[Zeljezo_Fe] = @Zeljezo_Fe
+      ,[Magnezijum_Mg] = @Magnezijum_Mg
+      ,[Fosfor_P] = @Fosfor_P
+      ,[Kalijum_K] = @Kalijum_K
+      ,[Natrijum_Na] = @Natrijum_Na
+      ,[Cink_Zn] = @Cink_Zn
+      ,[Bakar_Cu] = @Bakar_Cu
+      ,[Mangan_Mn] = @Mangan_Mn
+      ,[Selen_Se] = @Selen_Se
+ WHERE [id]=@id
+
+ SELECT * FROM [nutripal].[dbo].[namirnice]
+ WHERE [id]=@id

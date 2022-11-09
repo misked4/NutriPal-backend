@@ -1,0 +1,2 @@
+INSERT INTO receptKorisnikaPoObroku (ReceptId, KorisnikId, ObrokUTokuDanaId, Broj_porcija, sum_kcal, sum_UH, sum_PROTEINI, sum_MASTI)
+VALUES (@ReceptId, @KorisnikId, @ObrokUTokuDanaId, @Broj_porcija, @sum_kcal, @sum_UH, @sum_PROTEINI, @sum_MASTI)
