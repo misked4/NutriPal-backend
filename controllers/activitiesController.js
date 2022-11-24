@@ -12,6 +12,18 @@ const getActivitiesFromController = async(req, res, next) => {
     }
 }
 
+const addActivityFromController = async(req, res, next) => {
+    try{
+        const data = req.body;
+        const createdActivity = await activitiesData.addActivity(data);
+        res.send(createdActivity);
+    }
+    catch(error){
+        res.status(400).send(error.message);
+    }
+}
+
 module.exports = {
-    getActivitiesFromController
+    getActivitiesFromController,
+    addActivityFromController
 }
