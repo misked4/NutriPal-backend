@@ -140,6 +140,22 @@ const returnGroceriesForOneRecipeController = async(req, res, next) => {
     }
 }
 
+const returnRecipeWithFullGroceriesController = async(req, res, next) => {
+    try{
+        const recipeId = req.params.id;
+        const groceries = await recipesData.returnGroceriesWithVitaminsForOneRecipe(recipeId);
+        if(!groceries.length)
+        {
+            const emptyArray = [];
+            res.send(emptyArray);
+        }
+        else res.send(groceries);
+    }
+    catch(error){
+        res.status(400).send(error.message);
+    }
+}
+
 module.exports = {
     addRecipeFromController,
     searchRecipesFromController,
@@ -149,5 +165,6 @@ module.exports = {
     getOneRecipeController,
     changeSeenToRecipesController,
     searchRecipesForOneNutricionistController,
-    returnGroceriesForOneRecipeController
+    returnGroceriesForOneRecipeController,
+    returnRecipeWithFullGroceriesController
 }

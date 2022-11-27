@@ -183,6 +183,21 @@ const returnGroceriesForOneRecipe = async(recipeId) => {
     }
 }
 
+const returnGroceriesWithVitaminsForOneRecipe = async(recipeId) => {
+    try{
+        let pool = await sql.connect(config.sql);
+        const sqlQueries = await utils.loadSqlQueries('recipes');
+        const recipes = await pool.request()
+                                        .input('recipeId', sql.Int, recipeId)
+                                        .query(sqlQueries.returnGroceriesForOneRecipeWithVitaminsQuery);
+        return recipes.recordset;
+    }
+    catch(error){
+        return error.message;
+    }
+}
+
+
 module.exports = {
     addRecipeData,
     searchRecipes,
@@ -193,5 +208,6 @@ module.exports = {
     getRecipe,
     changeSeenLikes,
     searchRecipesForOneNutritionist,
-    returnGroceriesForOneRecipe
+    returnGroceriesForOneRecipe,
+    returnGroceriesWithVitaminsForOneRecipe
 }

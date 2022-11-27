@@ -6,7 +6,7 @@ const router = express.Router();
 
 const { addRecipeFromController, searchRecipesFromController, increaseOrDecreaseLikesController, searchLikesController,
     returnUnseenLikesController, getOneRecipeController, changeSeenToRecipesController, searchRecipesForOneNutricionistController, 
-    returnGroceriesForOneRecipeController } = recipesController;
+    returnGroceriesForOneRecipeController, returnRecipeWithFullGroceriesController } = recipesController;
 
 router.post('/recipe', addRecipeFromController);
 router.put('/recipe/:id', increaseOrDecreaseLikesController);
@@ -19,6 +19,7 @@ router.get('/recipes/like/:id', returnUnseenLikesController);
 router.get('/recipes/likes/:id', changeSeenToRecipesController);
 
 router.get('/fullrecipe/:id', returnGroceriesForOneRecipeController);
+router.get('/fullgroceries/:id', returnRecipeWithFullGroceriesController);
 
 module.exports = {
     routes: router
